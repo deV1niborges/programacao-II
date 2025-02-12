@@ -3,17 +3,21 @@ import { mongoose, Schema } from "mongoose";
 const schema = mongoose.schema;
 
 const pacientSchema = new Schema({
-  date: {
+  name: {
+    type: String,
+    required: [true, "Pacient name is required"],
+  },
+  birthData: {
     type: Date,
-    required: [true, "Appointment date is required"],
+    required: [true, "Birth data is required"],
   },
-  doctorID: {
+  email: {
     type: String,
-    required: [true, "DoctorId is required"],
+    required: [true, "Email contact is required"],
   },
-  pacientID: {
+  phone: {
     type: String,
-    required: [true, "PacientId is required"],
+    required: [true, "Phone number is required"],
   },
   createdAt: {
     type: Date,

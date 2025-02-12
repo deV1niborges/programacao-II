@@ -3,13 +3,9 @@ import { mongoose, Schema } from "mongoose";
 const schema = mongoose.schema;
 
 const doctorSchema = new Schema({
-  doctorID: {
-    type: String,
-    required: [true, "DoctorId is required"],
-  },
   name: {
     type: String,
-    required: [true, "DoctorName is required"],
+    required: [true, "Doctor name is required"],
   },
   login: {
     type: String,
@@ -31,11 +27,11 @@ const doctorSchema = new Schema({
   },
   email: {
     type: String,
-    required: [true, "Email is required"],
+    required: [true, "Email contact is required"],
   },
   phone: {
     type: String,
-    required: [true, "Phone is required"],
+    required: [true, "Phone number is required"],
   },
   createdAt: {
     type: Date,

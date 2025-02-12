@@ -9,7 +9,7 @@ const appointmentSchema = new Schema({
   },
   doctorID: {
     type: String,
-    required: [true, "DoctorId is required"],
+    required: [true, "Doctor Id is required"],
   },
   pacientID: {
     type: String,

@@ -2,18 +2,25 @@ import { mongoose, Schema } from "mongoose";
 
 const schema = mongoose.schema;
 
-const appointmentSchema = new Schema({
+const prescriptionSchema = new Schema({
   date: {
     type: Date,
-    required: [true, "Appointment date is required"],
+    required: [true, "Date OF Prescription date is required"],
   },
-  doctorID: {
+  appointmentID: {
     type: String,
-    required: [true, "DoctorId is required"],
+    required: [true, "Appointment ID is required"],
   },
-  pacientID: {
+  medicine: {
     type: String,
-    required: [true, "PacientId is required"],
+    required: [true, "Medicine is required"],
+  },
+  dosage: {
+    type: String,
+    required: [true, "Dosage is required"],
+  },
+  instruction: {
+    type: String,
   },
   createdAt: {
     type: Date,
@@ -21,6 +28,6 @@ const appointmentSchema = new Schema({
   },
 });
 
-const appointment = mongoose.model("Appointment", appointmentSchema);
+const prescription = mongoose.model("Prescription", prescriptionSchema);
 
-export default appointment;
+export default prescription;
