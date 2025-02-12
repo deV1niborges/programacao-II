@@ -2,7 +2,7 @@ import { mongoose, Schema } from "mongoose";
 
 const schema = mongoose.schema;
 
-const appointmentSchema = new Schema({
+const pacientSchema = new Schema({
   date: {
     type: Date,
     required: [true, "Appointment date is required"],
@@ -21,6 +21,6 @@ const appointmentSchema = new Schema({
   },
 });
 
-const appointment = mongoose.model("Appointment", appointmentSchema);
+const pacient = mongoose.model("Pacient", pacientSchema);
 
-export default appointment;
+export default pacient;
