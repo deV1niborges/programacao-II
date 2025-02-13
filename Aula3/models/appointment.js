@@ -1,19 +1,19 @@
 import { mongoose, Schema } from "mongoose";
 
-const schema = mongoose.schema;
+const schema = mongoose.Schema;
 
 const appointmentSchema = new Schema({
   date: {
     type: Date,
     required: [true, "Appointment date is required"],
   },
-  doctorID: {
+  doctorId: {
     type: String,
     required: [true, "Doctor Id is required"],
   },
-  pacientID: {
+  patientId: {
     type: String,
-    required: [true, "PacientId is required"],
+    required: [true, "Patient Id is required"],
   },
   createdAt: {
     type: Date,

@@ -7,7 +7,7 @@ const pacientSchema = new Schema({
     type: String,
     required: [true, "Pacient name is required"],
   },
-  birthData: {
+  birthDate: {
     type: Date,
     required: [true, "Birth data is required"],
   },

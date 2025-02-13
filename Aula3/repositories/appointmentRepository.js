@@ -8,36 +8,36 @@ const getAppointment = async (id) => {
   try {
     return await appointment.findById(id);
   } catch (error) {
-    throw new Error();
+    throw new Error(error);
   }
 };
 
-const saveAppointment = async ({ date, doctortId, pacientId }) => {
+const saveAppointment = async ({ date, doctorId, patientId }) => {
   try {
-    const prescription = new appointment({ date, doctortId, pacientId });
-    return await prescription.save();
+    const newAppintment = new appointment({ date, doctorId, patientId });
+    return await newAppintment.save();
   } catch (error) {
-    throw new Error();
+    throw new Error(error);
   }
 };
 
-const updateAppointment = async (id, { date, doctorId, pacientId }) => {
+const updateAppointment = async (id, { date, doctorId, patientId }) => {
   try {
     return await appointment.findByIdAndUpdate(
       id,
-      { date, doctorId, pacientId },
+      { date, doctorId, patientId },
       { new: true }
     );
   } catch (error) {
-    throw new Error();
+    throw new Error(error);
   }
 };
 
 const deleteAppointment = async (id) => {
   try {
-    return await appointment.findByIdAndUpdate(id);
+    return await appointment.findByIdAndDelete(id);
   } catch (error) {
-    throw new Error();
+    throw new Error(error);
   }
 };
 

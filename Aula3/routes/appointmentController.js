@@ -25,12 +25,12 @@ router.get("/getAppointment/:id", async (req, res) => {
 });
 
 router.post("/postAppointment", async (req, res) => {
-  const { date, doctortId, pacientId } = req.body;
+  const { date, doctorId, patientId } = req.body;
   try {
     const appointment = await appointmentService.saveAppointment({
       date,
-      doctortId,
-      pacientId,
+      doctorId,
+      patientId,
     });
     res.send(appointment);
   } catch (error) {
@@ -41,12 +41,12 @@ router.post("/postAppointment", async (req, res) => {
 
 router.put("/appointments/:id", async (req, res) => {
   const { id } = req.params;
-  const { date, doctortId, pacientId } = req.body;
+  const { date, doctorId, patientId } = req.body;
   try {
     const appointment = await appointmentService.updateAppointment(id, {
       date,
-      doctortId,
-      pacientId,
+      doctorId,
+      patientId,
     });
     res.send(appointment);
   } catch (error) {

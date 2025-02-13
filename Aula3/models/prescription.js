@@ -7,7 +7,7 @@ const prescriptionSchema = new Schema({
     type: Date,
     required: [true, "Date OF Prescription date is required"],
   },
-  appointmentID: {
+  appointmentId: {
     type: String,
     required: [true, "Appointment ID is required"],
   },
@@ -19,7 +19,7 @@ const prescriptionSchema = new Schema({
     type: String,
     required: [true, "Dosage is required"],
   },
-  instruction: {
+  instructions: {
     type: String,
   },
   createdAt: {
