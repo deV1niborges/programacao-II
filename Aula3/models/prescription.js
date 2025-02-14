@@ -1,6 +1,6 @@
 import { mongoose, Schema } from "mongoose";
 
-const schema = mongoose.schema;
+const schema = mongoose.Schema;
 
 const prescriptionSchema = new Schema({
   date: {
