@@ -14,8 +14,8 @@ const getAppointment = async (id) => {
 
 const saveAppointment = async ({ date, doctorId, patientId }) => {
   try {
-    const newAppointment = new appointment({ date, doctorId, patientId });
-    return await newAppointment.save();
+    const appointment = new appointment({ date, doctorId, patientId });
+    return await appointment.save();
   } catch (error) {
     throw new Error(error);
   }
