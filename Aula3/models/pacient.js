@@ -20,7 +20,7 @@ const pacientSchema = new Schema({
     required: [true, "Phone number is required"],
     validate: {
       validator: function (v) {
-        return /\d(2) 9\d(4)-\d(4)/.test(v);
+        return /^\d{2} \d{5}-\d{4}$/.test(v);
       },
       message: (props) =>
         `${props.value} This is not a valid phone value.Please use the following format 99 91234-1234`,

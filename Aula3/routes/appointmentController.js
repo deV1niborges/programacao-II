@@ -27,12 +27,12 @@ router.get("/getAppointment/:id", async (req, res) => {
 router.post("/postAppointment", async (req, res) => {
   const { date, doctorId, patientId } = req.body;
   try {
-    const appointment = await appointmentService.saveAppointment({
+    const newAppointment = await appointmentService.saveAppointment({
       date,
       doctorId,
       patientId,
     });
-    res.send(appointment);
+    res.send(newAppointment);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -43,12 +43,12 @@ router.put("/appointments/:id", async (req, res) => {
   const { id } = req.params;
   const { date, doctorId, patientId } = req.body;
   try {
-    const appointment = await appointmentService.updateAppointment(id, {
+    const newAppointment = await appointmentService.updateAppointment(id, {
       date,
       doctorId,
       patientId,
     });
-    res.send(appointment);
+    res.send(newAppointment);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -58,8 +58,8 @@ router.put("/appointments/:id", async (req, res) => {
 router.delete("/appointments/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const appointment = await appointmentService.deleteAppointment(id);
-    res.send(appointment);
+    const newAppointment = await appointmentService.deleteAppointment(id);
+    res.send(newAppointment);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -70,10 +70,10 @@ router.put("/reschedule/:id", async (req, res) => {
   const { id } = req.params;
   const { date } = req.body;
   try {
-    let appointment = await appointmentService.getAppointment(id);
-    appointment.date = date;
-    appointment = await appointmentService.updateAppointment(id, { date });
-    res.send(appointment);
+    let newAppointment = await appointmentService.getAppointment(id);
+    newAppointment.date = date;
+    newAppointment = await appointmentService.updateAppointment(id, { date });
+    res.send(newAppointment);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);

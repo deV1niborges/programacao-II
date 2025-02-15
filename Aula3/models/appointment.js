@@ -13,7 +13,7 @@ const appointmentSchema = new Schema({
     validate: {
       validator: function (v) {
         const id = new mongoose.Types.ObjectId(v); // convertendo uma string em objeto ID para ser encontradado no banco de dados
-        return Doctor.exists({ _id: id });
+        return doctor.exists({ _id: id });
       },
       message: (props) => `Doctor ID ${props.value} not found`,
     },
@@ -24,7 +24,7 @@ const appointmentSchema = new Schema({
     validate: {
       validator: function (v) {
         const id = new mongoose.Types.ObjectId(v); // convertendo uma string em objeto ID para ser encontradado no banco de dados
-        return Patient.exists({ _id: id });
+        return patient.exists({ _id: id });
       },
       message: (props) => `Patient ID ${props.value} not found`,
     },
