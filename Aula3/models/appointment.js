@@ -15,7 +15,7 @@ const appointmentSchema = new Schema({
         const id = new mongoose.Types.ObjectId(v); // convertendo uma string em objeto ID para ser encontradado no banco de dados
         return Doctor.exists({ _id: id });
       },
-      message: (props) => `Doctor ID ${props.value} not found`,
+      message: (props) => `Doctor Id ${props.value} not found`,
     },
   },
   patientId: {
@@ -26,7 +26,7 @@ const appointmentSchema = new Schema({
         const id = new mongoose.Types.ObjectId(v); // convertendo uma string em objeto ID para ser encontradado no banco de dados
         return Patient.exists({ _id: id });
       },
-      message: (props) => `Patient ID ${props.value} not found`,
+      message: (props) => `Patient Id ${props.value} not found`,
     },
   },
   createdAt: {
